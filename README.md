@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 基于混沌增强与格密码的抗量子隐私保护盲签名协议系统
 
 [![Language](https://img.shields.io/badge/language-Rust-orange.svg)](https://www.rust-lang.org/)
@@ -86,3 +87,5 @@
 ## 📜 许可证
 
 本项目采用 MIT 许可证。详见 [LICENSE](https://www.google.com/search?q=LICENSE) 文件。
+
+>>>>>>> 12bf739f7c6e301d50181a3fab5298b733946724
