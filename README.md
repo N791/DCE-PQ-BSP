@@ -45,7 +45,7 @@
 
 1. 克隆仓库：
    ```bash
-   git clone [https://github.com/N791/DCE-PQ-BSP.git](https://github.com/N791/DCE-PQ-BSP.git)
+   git clone https://github.com/N791/DCE-PQ-BSP.git
    cd DCE-PQ-BSP
     ```
 
