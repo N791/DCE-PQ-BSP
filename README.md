@@ -40,14 +40,14 @@
 ### 前置要求
 
 - **Rust Toolchain**: 建议使用 `cargo 1.70+`
-- **字体文件**: 项目运行需要 `fonts/msyh.ttf` (微软雅黑) 放置于根目录，以支持中文显示。
+- **字体文件**: 项目运行需要 `fonts/msyh.ttf` (微软雅黑) 放置于根目录，以支持中文显示。(已经提供了对应文件)
 
 ### 安装与运行
 
 1. 克隆仓库：
    ```bash
-   git clone [https://github.com/YourUsername/YourProjectName.git](https://github.com/YourUsername/YourProjectName.git)
-   cd YourProjectName
+   git clone [https://github.com/N791/DCE-PQ-BSP.git](https://github.com/N791/DCE-PQ-BSP.git)
+   cd DCE-PQ-BSP
     ```
 
 2.  运行项目：
