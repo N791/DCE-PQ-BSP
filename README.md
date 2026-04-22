@@ -1,4 +1,4 @@
-# 基于混沌系统的分块盲签名隐私保护协协议
+# 基于混沌系统的分块盲签名隐私保护协议
 [![Language](https://img.shields.io/badge/language-Rust-orange.svg)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Framework](https://img.shields.io/badge/GUI-egui-green.svg)](https://github.com/emilk/egui)
