@@ -1,5 +1,4 @@
-# 基于混沌增强与格密码的抗量子隐私保护盲签名协议系统
-
+# 基于混沌系统的分块盲签名隐私保护协协议
 [![Language](https://img.shields.io/badge/language-Rust-orange.svg)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Framework](https://img.shields.io/badge/GUI-egui-green.svg)](https://github.com/emilk/egui)
