@@ -3,7 +3,6 @@ mod entropy;
 mod error;
 mod lattice_sig;
 mod protocol;
-mod tests;
 mod gui;
 
 use eframe::egui;
