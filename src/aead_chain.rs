@@ -19,7 +19,7 @@ pub struct BlockCiphertext {
 pub struct ChunkingAead;
 
 impl ChunkingAead {
-    /// 并行外的分块与链式加密
+    /// 分块加密
     pub fn encrypt_and_chain(
         key: &SessionKey,
         messages: Vec<Vec<u8>>,
@@ -27,10 +27,9 @@ impl ChunkingAead {
         let cipher = Aes256Gcm::new_from_slice(&key.0).map_err(|_| ProtocolError::AeadError)?;
         
         let mut blocks = Vec::with_capacity(messages.len());
-        let mut prev_hash = [0u8; 32]; // Genesis hash
+        let mut prev_hash = [0u8; 32];
 
         for (i, msg) in messages.into_iter().enumerate() {
-            // 生成确定性或随机 Nonce (这里用计数器模拟)
             let mut nonce_bytes = [0u8; 12];
             nonce_bytes[0..8].copy_from_slice(&(i as u64).to_le_bytes());
             let nonce = Nonce::from_slice(&nonce_bytes);
@@ -39,7 +38,6 @@ impl ChunkingAead {
                 .encrypt(nonce, msg.as_ref())
                 .map_err(|_| ProtocolError::AeadError)?;
 
-            // 防篡改链: hi = H(ci || hi-1)
             let mut hasher = Sha256::new();
             hasher.update(&ciphertext);
             hasher.update(&prev_hash);

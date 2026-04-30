@@ -17,7 +17,6 @@ use crate::lattice_sig::{
 };
 use crate::protocol::{SessionContext, Signer, User};
 
-// ============ Enums ============
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum PageState {
     Settings,
@@ -52,10 +51,9 @@ pub enum TrajectoryMode {
     ThreeDimensions,
 }
 
-// ============ Config Structs ============
 #[derive(Debug, Clone)]
 pub struct CryptoConfig {
-    pub session_key_string: String, // 新增：明文字符串密钥
+    pub session_key_string: String,
     pub session_key_hex: String,
     pub session_nonce: [u8; 16],
     pub enable_replay_protection: bool,
@@ -65,7 +63,6 @@ pub struct CryptoConfig {
 impl Default for CryptoConfig {
     fn default() -> Self {
         let default_str = "MySecretSessionKey_2026".to_string();
-        // 默认将字符串转为十六进制
         let default_hex = default_str
             .as_bytes()
             .iter()
@@ -112,7 +109,6 @@ pub enum TrajectoryMessage {
     Completed,
 }
 
-// ============ Main GUI Struct ============
 pub struct ProtocolGUI {
     current_page: PageState,
     chaos_config: ChaosConfig,
@@ -120,14 +116,14 @@ pub struct ProtocolGUI {
     protocol_config: ProtocolConfig,
 
     trajectory_data: Vec<f64>,
-    trajectory_3d_points: Vec<Vec3>, // 3D 相位空间轨迹
+    trajectory_3d_points: Vec<Vec3>,
     trajectory_gen_state: ExecutionState,
     trajectory_thread_running: Arc<AtomicBool>,
     trajectory_rx: Option<Receiver<TrajectoryMessage>>,
     trajectory_rounds: usize,
     trajectory_current_round: Arc<AtomicUsize>,
     traj_visualization_mode: TrajectoryMode,
-    rotation_angle: f32, // 3D 旋转角度
+    rotation_angle: f32,
 
     protocol_step: ProtocolStep,
     protocol_state: ExecutionState,
